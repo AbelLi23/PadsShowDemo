@@ -24,9 +24,10 @@ namespace PadsShowDemo
         }
         public PadsSheet(int shtRow, int shtCol)
         {
+            string strExePath = Application.StartupPath;
             _SheetRow = shtRow; _SheetCol = shtCol;
-            _PosState = Image.FromFile(@"D:\AndyLi2020\Documents\repositories\StdProjs\PadsShowDemo\PadsShowDemo\res\bond200px.png");
-            _NegState = Image.FromFile(@"D:\AndyLi2020\Documents\repositories\StdProjs\PadsShowDemo\PadsShowDemo\res\unbond200px.png");
+            _PosState = Image.FromFile(strExePath + @"\res\bond200px.png");
+            _NegState = Image.FromFile(strExePath + @"\res\unbond200px.png");
             _PosColor = new SolidBrush(Color.Blue);
             _NegColor = new SolidBrush(Color.Red);
             _CurSheetValue = new Boolean[_SheetRow * _SheetCol];
@@ -42,10 +43,11 @@ namespace PadsShowDemo
         }
         public PadsSheet(int shtRow, int shtCol, Boolean reverse)
         {
+            string strExePath = Application.StartupPath;
             //为单个DieBox准备,每一行/列即为一个Sheet
             _SheetRow = shtRow; _SheetCol = shtCol; _ReverseValue = reverse;
-            _PosState = Image.FromFile(@"D:\AndyLi2020\Documents\repositories\StdProjs\PadsShowDemo\PadsShowDemo\res\bond200px.png");
-            _NegState = Image.FromFile(@"D:\AndyLi2020\Documents\repositories\StdProjs\PadsShowDemo\PadsShowDemo\res\unbond200px.png");
+            _PosState = Image.FromFile(strExePath + @"\res\bond200px.png");
+            _NegState = Image.FromFile(strExePath + @"\res\unbond200px.png");
             _PosColor = new SolidBrush(Color.Blue);
             _NegColor = new SolidBrush(Color.Red);
             _CurSheetValue = new Boolean[_SheetRow * _SheetCol];
@@ -62,8 +64,8 @@ namespace PadsShowDemo
         private void PadsSheet_Load(object sender, EventArgs e)
         {
             //此Load事件应该只会调用一次
-            //_PosState = Image.FromFile(@"D:\AndyLi2020\Documents\repositories\StdProjs\PadsShowDemo\PadsShowDemo\res\bond200px.png");
-            //_NegState = Image.FromFile(@"D:\AndyLi2020\Documents\repositories\StdProjs\PadsShowDemo\PadsShowDemo\res\unbond200px.png");
+            //_PosState = Image.FromFile(strExePath + @"\res\bond200px.png");
+            //_NegState = Image.FromFile(strExePath + @"\res\unbond200px.png");
             //_PosColor = new SolidBrush(Color.Green);
             //_NegColor = new SolidBrush(Color.Gray);
             //_Bmp = new Bitmap(this.Width, this.Height);
